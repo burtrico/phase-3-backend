@@ -3,9 +3,6 @@ class User < ActiveRecord::Base
     has_many :assets, through: :ratings
 
     
-   
-   
-    
     def favorite_asset
         puts "Favorite Assets Method:"
         self.ratings.order(star_rating: :desc).first
