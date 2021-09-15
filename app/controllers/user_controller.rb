@@ -14,13 +14,11 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      allowed_params = %w(name spot_name category)
+      allowed_params = %w(name)
       params.select { |param, value| allowed_params.include?(param)}
     end
   
     def serialize(objects)
-      objects.to_json(
-        methods: [:spot_name]
-      )
+      objects.to_json
     end
   end
