@@ -14,13 +14,11 @@ class RatingsController < ApplicationController
     private
   
     def rating_params
-    #   allowed_params = %w(name spot_name category)
+      allowed_params = %(star_rating comment user_id asset_id)
       params.select { |param, value| allowed_params.include?(param)}
     end
   
     def serialize(objects)
-      objects.to_json(
-        methods: [:spot_name]
-      )
+      objects.to_json
     end
   end
