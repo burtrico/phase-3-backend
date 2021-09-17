@@ -4,7 +4,7 @@ class RatingsController < ApplicationController
     end
   
     post "/ratings" do 
-      serialize(Rating.create(user_params))
+      serialize(Rating.create(rating_params))
     end
   
     delete "/ratings/:id" do 

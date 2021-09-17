@@ -4,7 +4,13 @@ class AssetsController < ApplicationController
     end
   
     post "/assets" do 
-      serialize(Asset.create(user_params))
+      serialize(Asset.create(asset_params))
+    end
+
+    patch "/assets/:id" do
+      asset = Asset.find(params[:id])
+      asset.update(asset_params)
+      serialize(asset)
     end
   
     delete "/assets/:id" do 
