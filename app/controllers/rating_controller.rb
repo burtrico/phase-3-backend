@@ -22,3 +22,5 @@ class RatingsController < ApplicationController
       objects.to_json
     end
   end
+
+  
